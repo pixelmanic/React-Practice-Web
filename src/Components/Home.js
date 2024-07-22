@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../Styles/Home.css";
 import Navbar from "./Navbar";
+import About from "./About";
 
 export default function Home() {
   const clickMe = (e, event) => {
@@ -13,10 +14,11 @@ export default function Home() {
   };
   return (
     <div>
-      {/* <Navbar /> */}
+      <Navbar />
       <h1 className="main-text" style={{ color: "red" }}>
         {name}
       </h1>
+      <About />
       <button onClick={(e) => clickMe("hello", e)}>Click me</button>
       <form>
         <input placeholder="text" type="text" onChange={(e) => inputValue(e)} />
