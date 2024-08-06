@@ -37,7 +37,11 @@ export default function Navbar() {
     },
   ]);
 
+  const handleDelete = (id) => {
+    const newData = product.filter((product) => product.id !== id);
+    setProduct(newData);
+  };
   return <div>
-    <Card data={product} title="All Products" />
+    <Card data={product} image="fjklafjkldsajfakl" handleDelete={handleDelete} />
   </div>;
 }
