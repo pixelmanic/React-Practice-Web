@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 import Card from "./Card";
 import axios from "axios";
 import useAxios from "../useAxios";
-import { Link } from "react-router-dom";
+
+import { CleaningServicesSharp } from "@mui/icons-material";
+import ProductCard from "./ProductCard";
+import { Link } from "react-scroll";
 
 const About = () => {
   const { data, isLoading, isError } = useAxios(
@@ -13,7 +16,7 @@ const About = () => {
   //   const newData = products.filter((product) => product.id !== id);
   //   setProducts(newData);
   // };
-
+  console.log(data);
   return (
     <>
       {/* <div>
@@ -23,12 +26,9 @@ const About = () => {
         <button onClick={(e) => setName(e.target.textContent)}>world</button>
         <button onClick={(e) => setName(e.target.textContent)}>design</button>
       </div> */}
-      <Link to="/">Home</Link>
-      <Link to="/contact">Contact</Link>
+      <Link key="4" to="4" smooth={true} duration={500} spy={true} >Click me</Link> 
       {isLoading && <div>Loading....</div>}
-      {data && (
-        <Card data={data} image="jflksfjlsk"  />
-      )}
+      {data && <Card data={data} />}
       {isError && (
         <div style={{ color: "red", fontSize: "40px" }}>{isError}</div>
       )}
